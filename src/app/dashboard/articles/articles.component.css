@@ -1,0 +1,16 @@
+.row {
+    max-width: 90%;
+    position: relative;
+    left: 25px;
+}
+
+h1.title {
+    left: 10px;
+    position: absolute;
+}
+
+.logout {
+    position: absolute;
+    right: 10px;
+}
+

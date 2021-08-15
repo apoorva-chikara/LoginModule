@@ -1,0 +1,47 @@
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  {{error}}
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <h1>Sign Up</h1>
+    <hr><br>
+    <form (ngSubmit)="onSubmit()" ngNativeValidate>
+      <div class="form-group">
+        <label for="fullname">FullName</label>
+        <input
+          [(ngModel)]="user.fullName"
+          name="fullname"
+          type="fullname"
+          required
+          class="form-control"
+          id="fullname"
+          placeholder="enter your fullname">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          [(ngModel)]="user.email"
+          name="email"
+          type="email"
+          required
+          class="form-control"
+          id="email"
+          placeholder="enter your email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          [(ngModel)]="user.password"
+          name="password"
+          type="password"
+          required
+          class="form-control"
+          id="password"
+          minlength="5"
+          placeholder="enter a password">
+      </div>
+      <button type="submit" class="btn btn-primary submit">Submit</button>
+      <a (click)="reset()" class="btn btn-success cancel">Cancel</a>
+    </form>
+  </div>
+</div>

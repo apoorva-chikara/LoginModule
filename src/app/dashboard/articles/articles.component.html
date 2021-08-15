@@ -1,0 +1,25 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <h1 class="title">DashBoard</h1>
+      <button class="btn btn-danger logout" (click)="logout()">Logout</button>
+    </nav>
+  </div>
+
+  <div class="row" *ngIf="{articles: getArticles$ | async } as data">
+ <ng-container *ngIf="data.articles.dashboard.articles.length > 0">
+    <ng-container *ngFor="let article of data.articles.dashboard.articles">
+        <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{article?.title}}</h5>
+                <p class="card-text">{{article?.body}}</p>
+                <a (click)="messagePopup()" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+    </ng-container>
+</ng-container>
+  </div>
+
+
+  <!-- Navbar -->
