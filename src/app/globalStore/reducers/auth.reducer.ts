@@ -37,7 +37,7 @@ export function reducer(state = initialState, action: All): State {
       return {
         ...state,
         user: null,
-        errorMessage: action.payload.error.message
+        errorMessage: Array.isArray(action.payload.error.message) ? action.payload.error.message[0]['constraints']['isEmail'] : action.payload.error.message
       };
     }
     case AuthActionTypes.SIGNIN_SUCCESS: {
