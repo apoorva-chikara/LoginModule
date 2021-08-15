@@ -36,6 +36,7 @@ export class LoadDashBoardGuard implements CanActivate{
           return true;
       } else {
         this._toast.error('Please Login/Signup to access the Dashboard');
+        this._router.navigate(['/'])
         return false;
       }
     
